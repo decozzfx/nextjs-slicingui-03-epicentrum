@@ -16,8 +16,8 @@ const InfoPost = ({
            <span>&bull;</span>
            <div>{date}</div>
          </div>
-         <h2 className='text-2xl mt-4'>{title}</h2>
-         <p className='text-white/60 text-lg mt-6 w-10/12'>{postDesc}</p>
+         <h2 className='text-xl mt-4'>{title}</h2>
+         <p className='text-white/60 text-md mt-6 w-10/12'>{postDesc}</p>
          <div className="flex items-center mt-6">
             <img src={authorAvatar} className='rounded-full w-14' />
             <div className="ml-4 items-center">

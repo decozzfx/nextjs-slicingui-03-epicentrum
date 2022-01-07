@@ -8,7 +8,7 @@ const FeaturedPost = () => {
             <div className="lg:w-8/12 md:7/12 px-4">
                <img src="/featured-thumbnail.svg" className='rounded-xl w-full' />
             </div>
-            <div className="lg:w-4/12 md:5/12 w-full px-4">
+            <div className="lg:w-4/12 md:5/12 w-full px-4 items-center">
             <InfoPost
                category='UI Design'
                date='July 2, 2021'
