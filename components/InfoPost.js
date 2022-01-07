@@ -1,4 +1,6 @@
 import React from 'react'
+import PostMetaTitle from './PostMetaTitle'
+import PostAuthor from './PostAuthor'
 
 const InfoPost = ({
    category,
@@ -11,20 +13,9 @@ const InfoPost = ({
 }) => {
     return (
         <>
-         <div className="flex items-center text-white/60 space-x-4 mt-4">
-           <div className="uppercase">{category}</div>
-           <span>&bull;</span>
-           <div>{date}</div>
-         </div>
-         <h2 className='text-xl mt-4'>{title}</h2>
+         <PostMetaTitle category={category} date={date} title={title}/>
          <p className='text-white/60 text-md mt-6 w-10/12'>{postDesc}</p>
-         <div className="flex items-center mt-6">
-            <img src={authorAvatar} className='rounded-full w-14' />
-            <div className="ml-4 items-center">
-               <h3>{authorName}</h3>
-               <div className="text-white/60 mt-1">{authorRole}</div>
-            </div>
-         </div>         
+         <PostAuthor authorAvatar={authorAvatar} authorName={authorName} authorRole={authorRole}/>     
         </>
     )
 }

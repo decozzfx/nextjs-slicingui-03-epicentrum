@@ -3,6 +3,7 @@ import Container from './Container'
 
 const Navbar = () => {
     const [dropdown, setDropdown] = useState(false)
+    const [offCanvas, setOffCanvas] = useState(false)
     const dropdownList = [
         { text : 'Internet', href : '#'},
         { text : 'Books', href : '#'},
@@ -12,12 +13,25 @@ const Navbar = () => {
       <nav className="py-10">
         <Container>
           <div className="flex items-center ">
-            <div className="w-2/12 flex items-center">
+            <div className="w-3/12 md:hidden">
+              <button onClick={() => {setOffCanvas(!offCanvas)}}>
+                <img src="/menu.svg"/>
+              </button>
+            </div>
+            <div className="md:w-2/12 w-6/12  flex items-center justify-center md:justify-start">
               <div className="w-8 h-8 mr-4 bg-gray-500 rounded flex items-center justify-center shadow-2xl">E</div>
               Epicentrum
             </div>
-            <div className="w-7/12">
-              <ul className="space-x-10 flex">
+            <div className="md:hidden w-3/12 text-right">
+              <img className="inline-block" src="/search-nav.svg"  />
+            </div>
+            <div className={`md:w-7/12 w-full h-full fixed top-0 p-14 bg-gradient-to-b from-gray-600 to-gray-900 transition-all ${offCanvas ? 'left-0' : '-left-full'}`}>
+              <button 
+              onClick={() => {setOffCanvas(false)}}
+              className="top-5 right-5 absolute ">
+                <img src="/close.svg" />
+              </button>
+              <ul className="md:space-x-10 md:items-center flex flex-col space-y-4 ">
                 <li><a className="hover:underline" href="#">UI Design</a></li>
                 <li><a className="hover:underline" href="#">Front-End</a></li>
                 <li><a className="hover:underline" href="#">Back-End</a></li>
@@ -39,7 +53,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <div className="w-3/12 text-right">
+            <div className="hidden w-3/12 text-right md:mr-4">
               <input type="text" className="py-2 px-6 rounded-full bg-gray-700 bg-search pl-10 focus:outline-none hover:bg-gray-700/50" placeholder="Search..." />
             </div>
           </div>
