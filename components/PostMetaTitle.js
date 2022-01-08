@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const PostMetaTitle = ({category, date, title, center}) => {
     return (
@@ -8,7 +9,9 @@ const PostMetaTitle = ({category, date, title, center}) => {
             <span>&bull;</span>
             <div>{date}</div>
          </div>
-         <h2 className={`text-xl mt-4 ${center ? 'text-center' : ''}`}>{title}</h2>   
+         <h2 className={`text-xl mt-4 ${center ? 'text-center' : ''}`}>
+         <Link href='/detail'><a>{title}</a></Link>
+         </h2>   
         </>
     )
 }

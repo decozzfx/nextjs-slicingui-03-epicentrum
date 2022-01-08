@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import Container from '../components/Container'
 import Layout from '../components/Layout'
@@ -7,6 +8,9 @@ import PostMetaTitle from '../components/PostMetaTitle'
 const detail = () => {
     return (
         <Layout>
+        <Head>
+         <title>Details &mdash; Epicentrum</title>
+        </Head>
          <Container>
             <div className="flex md:w-6/12 w-full mx-auto items-center flex-col">
                <PostMetaTitle category='UI Design' date='July 2, 2021' title='Understanding color theory: the color wheel and finding complementary colors' center />

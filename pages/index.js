@@ -4,11 +4,15 @@ import { useState } from 'react'
 import Container from '../components/Container'
 import Layout from '../components/Layout'
 import mockPosts from '../utils/posts.json'
+import Head from 'next/head'
 
 export default function Home() {
   const [posts, setPosts] = useState(mockPosts)
   return (
     <Layout>      
+    <Head>
+      <title>Home &mdash; Epicentrum</title>
+    </Head>
      <Container>
       <FeaturedPost />
         <div className="flex -mx-3 flex-wrap">

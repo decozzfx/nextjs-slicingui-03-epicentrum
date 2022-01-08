@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import CardPost from '../components/CardPost'
 import mockPosts from '../utils/posts.json'
 import SectionHeader from '../components/SectionHeader'
+import Head from 'next/head'
 
 
 const posts = () => {
@@ -12,6 +13,9 @@ const posts = () => {
 
     return (
       <Layout>
+      <Head>
+      <title>Posts &mdash; Epicentrum</title>
+      </Head>
         <Container>
           <SectionHeader>UI Design</SectionHeader>
           {posts.length ? (
